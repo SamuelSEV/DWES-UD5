@@ -32,7 +32,7 @@
         <tr style="background-color:lightblue;">
             <td>session.save_handler</td>
             <td>define el argumento que es pasado al gestor de almacenamiento. Si se elige el gestor de archivos por defecto, éste es la ruta donde los archivos son creados. </td>
-            <td>Hay un argumento opcional N para esta directiva que determina el número de niveles de directorios por donde los archivos de sesión se desplegarán. Por ejemplo, establecerlo a '5;/tmp' puede terminar en crear un archivo de sesión y ubicación como /tmp/4/b/1/e/3/sess_4b1e384ad74619bd212e236e52a5a174If . Para usar N se deben crear todos estos directorios antes de utilizarlo. Para realizar esto, existe un pequeño script tipo shell en ext/session que se llama mod_files.sh, con una versión de Windows llamada mod_files.bat. Observe también que si N se usa y es más grande que 0 no se llevará a cabo la recolección de basura automática, vea una copia de php.ini para más información. También, si usa N, asegúrese de encerrar session.save_path entre "comillas" ya que el separador (;) también se usa para comentarios en php.ini.</td>
+            <td>El valor por defecto es files</td>
         </tr>
         <tr style="background-color:lightgreen;">
             <td>session.name</td>
