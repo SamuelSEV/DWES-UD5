@@ -7,7 +7,7 @@
     function insertarElemento($nombre, $pass, $cuenta) {
         try {
             $conn = new PDO("mysql:host=$GLOBALS[servidor];dbname=$GLOBALS[basesDatos]",$GLOBALS['usuario'],$GLOBALS['password']);
-            $insert=$conn->prepare("INSERT INTO usuarios (nombre, contraseña, cuenta) VALUES (?,?,?)");
+            $insert=$conn->prepare("INSERT INTO usuarios (nombre, contraseña, cuentabanco) VALUES (?,?,?)");
             $insert->bindParam(1, $nombre);
             $insert->bindParam(2, $pass);
             $insert->bindParam(3, $cuenta);
