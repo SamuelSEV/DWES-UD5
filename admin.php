@@ -9,15 +9,23 @@
 <body>
     <?php
         session_start();
-        if ($_SESSION['perfil']=="") {
-            header("Location: ejercicio6.php");
+        if ($_SESSION['perfil']=="admin") {
+            echo "Eres el jefe supremo";
         }
         elseif($_SESSION['perfil']=="usuario"){
             header("Location: usuario.php");
         }
         else {
-            echo "Eres el jefe supremo";
+            header("Location: ejercicio7.php");
+        }
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if($_POST['cerrar']){
+                header("Location: cierraSession.php");
+            }
         }
     ?>
+    <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="POST">
+        <p><input type="submit" value="Cerrar sesion" name="cerrar"></p>
+    </form>
 </body>
 </html>

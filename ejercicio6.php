@@ -16,17 +16,11 @@
             $pass = $_POST['contraseña'];
             $user = getUser($user);
             $verificar = password_verify($pass, $user['contraseña']);
-            session_start();
-            $_SESSION['perfil']=$user['perfil'];
+            
 
             if ($verificar) {
                 $error = "<p style='color:green'>Sesión iniciada correctamente.</p>";
-                if ($user['perfil'] == "admin") {
-                    header("Location: admin.php");
-                }
-                elseif ($user['perfil'] == "usuario") {
-                    header("Location: usuario.php");
-                }
+                
             } 
             else {
                 $error = "<p style='color:red'>Contraseña incorrecta.</p>";
